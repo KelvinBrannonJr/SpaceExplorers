@@ -25,5 +25,24 @@ public class Astronaut {
         this.shuttleName = shuttle;
     }
 
+    // Astronaut Setters
+    public void setAstronautName(String astronautName) {
+        this.astronautName = astronautName;
+    }
 
+    public void setAstronautRank(String astronautRank) {
+        this.astronautRank = astronautRank;
+    }
+
+    public void setHomeCountry(String homeCountry) {
+        this.homeCountry = homeCountry;
+    }
+
+    public void setUniqueSkill(String uniqueSkill) {
+        this.uniqueSkill = uniqueSkill;
+    }
+
+    public void setShuttleName(String shuttleName) {
+        this.shuttleName = shuttleName;
+    }
 }
