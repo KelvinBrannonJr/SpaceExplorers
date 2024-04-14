@@ -45,4 +45,25 @@ public class Astronaut {
     public void setShuttleName(String shuttleName) {
         this.shuttleName = shuttleName;
     }
+
+    // Astronaut Getters
+    public String getAstronautName() {
+        return this.astronautName;
+    }
+
+    public String getAstronautRank() {
+        return this.astronautRank;
+    }
+
+    public String getHomeCountry() {
+        return this.homeCountry;
+    }
+
+    public String getUniqueSkill() {
+        return this.uniqueSkill;
+    }
+
+    public String getShuttleName() {
+        return this.shuttleName;
+    }
 }
