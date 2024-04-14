@@ -25,5 +25,45 @@ public class Shuttle {
         this.hasRover = hasRov;
     }
 
+    // Shuttle Setters
+    public void setShuttleName(String shuttleName) {
+        this.shuttleName = shuttleName;
+    }
 
+    public void setCountryOrigin(String countryOrigin) {
+        this.countryOrigin = countryOrigin;
+    }
+
+    public void setResearchType(String researchType) {
+        this.researchType = researchType;
+    }
+
+    public void setNumOfRooms(int numOfRooms) {
+        this.numOfRooms = numOfRooms;
+    }
+
+    public void setHasRover(boolean hasRover) {
+        this.hasRover = hasRover;
+    }
+
+    // Shuttle Getters
+    public String getShuttleName() {
+        return this.shuttleName;
+    }
+
+    public String getCountryOrigin() {
+        return this.countryOrigin;
+    }
+
+    public String getResearchType() {
+        return this.researchType;
+    }
+
+    public int getNumOfRooms() {
+        return this.numOfRooms;
+    }
+
+    public boolean getHasRover() {
+        return this.hasRover;
+    }
 }
