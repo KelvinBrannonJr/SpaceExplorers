@@ -1,9 +1,11 @@
 public class Rover {
 
+    // Rover private members
     private String roverName;
     private double batteryRange;
     private boolean hasSolarCharger;
 
+    // Rover SensorType Enum
     public enum SensorType {
         DEFAULT("Default"),
         DOPPLER("Doppler"),
@@ -21,6 +23,7 @@ public class Rover {
         }
     }
 
+    // Rover Constructors
     public void Rover() {
         this.roverName = "None";
         this.batteryRange = 0.0;
@@ -31,6 +34,19 @@ public class Rover {
         this.roverName = roverName;
         this.batteryRange = batteryRange;
         this.hasSolarCharger = hasSolarCharger;
+    }
+
+    // Rover Setters
+    public void setRoverName(String rovName) {
+        this.roverName = rovName;
+    }
+
+    public void setBatteryRange(double batRange) {
+        this.batteryRange = batRange;
+    }
+
+    public void setHasSolarCharger(boolean solarCharge) {
+        this.hasSolarCharger = solarCharge;
     }
 
 }
