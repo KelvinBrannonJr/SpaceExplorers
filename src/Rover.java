@@ -6,7 +6,7 @@ public class Rover {
     private boolean hasSolarCharger;
 
     // Rover SensorType Enum
-    public enum SensorType {
+    public enum SensorTypes {
         DEFAULT("Default"),
         DOPPLER("Doppler"),
         INFERRED("InferRed"),
@@ -15,7 +15,7 @@ public class Rover {
 
         private String sensorTypeDesc;
 
-        SensorType(String sensorTypeCode) {
+        SensorTypes(String sensorTypeCode) {
             this.sensorTypeDesc = sensorTypeCode;
         }
         public String getSensorType() {
@@ -28,12 +28,14 @@ public class Rover {
         this.roverName = "None";
         this.batteryRange = 0.0;
         this.hasSolarCharger = false;
+        SensorTypes sensor = SensorTypes.DEFAULT;
     }
 
-    public void Rover(String roverName, double batteryRange, boolean hasSolarCharger) {
+    public void Rover(String roverName, SensorTypes sensor, double batteryRange, boolean hasSolarCharger) {
         this.roverName = roverName;
         this.batteryRange = batteryRange;
         this.hasSolarCharger = hasSolarCharger;
+
     }
 
     // Rover Setters
