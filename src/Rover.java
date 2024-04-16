@@ -49,4 +49,17 @@ public class Rover {
         this.hasSolarCharger = solarCharge;
     }
 
+    // Rover Getters
+    public String getRoverName() {
+        return this.roverName;
+    }
+
+    public double getBatteryRange() {
+        return this.batteryRange;
+    }
+
+    public boolean getHasSolarCharger() {
+        return this.hasSolarCharger;
+    }
+
 }
