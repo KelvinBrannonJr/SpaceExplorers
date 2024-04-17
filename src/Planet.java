@@ -23,5 +23,17 @@ public class Planet {
         }
     }
 
+    private boolean hasAtomosphere;
+
+    private double atmosphereTemp;
+
+    private boolean hasSurface;
+
+    private double surfaceTemp;
+
+    private String abundantResource;
+
+    private boolean isHabitableForHumans;
+
 
 }
