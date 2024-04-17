@@ -4,24 +4,10 @@ public class Planet {
     private String planetName;
     private int planetMass;
 
+    private PlanetTypes planetTypes;
+
     // Planet Types Enum
-    public enum PlanetTypes {
-        DEFAULT("Default"),
-        ROCKY("Rocky"),
-        LIQUID("Liquid"),
-        GASEOUS("Gaseous"),
-        CRYSTALLINE("Crystalline");
-
-        private String planetTypes;
-
-        PlanetTypes(String plTypes) {
-            this.planetTypes = plTypes;
-        }
-
-        public String getPlanetTypes() {
-            return planetTypes;
-        }
-    }
+    public enum PlanetTypes { DEFAULT, ROCKY, LIQUID, GASEOUS, CRYSTALLINE }
 
     private boolean hasAtmosphere;
 
@@ -39,7 +25,7 @@ public class Planet {
     public Planet() {
         this.planetName = "None";
         this.planetMass = 0;
-        PlanetTypes plType = PlanetTypes.DEFAULT;
+        this.planetTypes = PlanetTypes.DEFAULT;
         this.hasAtmosphere = false;
         this.atmosphereTemp = 0.0;
         this.hasSurface = false;
@@ -52,7 +38,7 @@ public class Planet {
             boolean hasSurface, double surfaceTemp, String abundantResource, boolean isHabitableForHumans) {
         this.planetName = planetName;
         this.planetMass = planetMass;
-        PlanetTypes planetType = plType;
+        this.planetTypes = plType;
         this.hasAtmosphere = hasAtmosphere;
         this.atmosphereTemp = atmosphereTemp;
         this.hasSurface = hasSurface;
