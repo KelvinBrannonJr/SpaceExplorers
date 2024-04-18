@@ -6,7 +6,6 @@ public class Astronaut {
     private String uniqueSkill;
     private String shuttleName;
 
-
     // Default Astronaut Constructor
     public Astronaut() {
         this.astronautName = "No Name";
@@ -14,6 +13,7 @@ public class Astronaut {
         this.homeCountry = "No Country of Origin";
         this.uniqueSkill = "No specialty skill";
         this.shuttleName = "No shuttle name";
+
     }
 
     // Astronaut Overloaded Constructor

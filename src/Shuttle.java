@@ -7,6 +7,9 @@ public class Shuttle {
     private int numOfRooms;
     private boolean hasRover;
 
+    private Astronaut[] crew;
+    private int crewCount;
+
     // Default Shuttle Constructors
     public Shuttle() {
         this.shuttleName = "Shuttle Unknown";
@@ -14,6 +17,7 @@ public class Shuttle {
         this.researchPurpose = "Research Purpose Unknown";
         this.numOfRooms = 0;
         this.hasRover = false;
+        this.crew = new Astronaut[crewCount];
     }
 
     // Overloaded Shuttle Constructor
@@ -23,6 +27,8 @@ public class Shuttle {
         this.researchPurpose = researchPurpose;
         this.numOfRooms = numOfRooms;
         this.hasRover = hasRover;
+        this.crew = new Astronaut[crewCount];
+
     }
 
     // Shuttle Setters
