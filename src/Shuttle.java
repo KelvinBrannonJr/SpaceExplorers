@@ -3,7 +3,7 @@ public class Shuttle {
     // Shuttle private members
     private String shuttleName;
     private String countryOrigin;
-    private String researchType;
+    private String researchPurpose;
     private int numOfRooms;
     private boolean hasRover;
 
@@ -11,18 +11,18 @@ public class Shuttle {
     public Shuttle() {
         this.shuttleName = "Shuttle Unknown";
         this.countryOrigin = "No Country";
-        this.researchType = "Research Unknown";
+        this.researchPurpose = "Research Purpose Unknown";
         this.numOfRooms = 0;
         this.hasRover = false;
     }
 
     // Overloaded Shuttle Constructor
-    public Shuttle(String name, String origin, String research, int roomNums, boolean hasRov) {
-        this.shuttleName = name;
-        this.countryOrigin = origin;
-        this.researchType = research;
-        this.numOfRooms = roomNums;
-        this.hasRover = hasRov;
+    public Shuttle(String shuttleName, String countryOrigin, String researchPurpose, int numOfRooms, boolean hasRover) {
+        this.shuttleName = shuttleName;
+        this.countryOrigin = countryOrigin;
+        this.researchPurpose = researchPurpose;
+        this.numOfRooms = numOfRooms;
+        this.hasRover = hasRover;
     }
 
     // Shuttle Setters
@@ -34,8 +34,8 @@ public class Shuttle {
         this.countryOrigin = countryOrigin;
     }
 
-    public void setResearchType(String researchType) {
-        this.researchType = researchType;
+    public void setResearchPurpose(String researchPurpose) {
+        this.researchPurpose = researchPurpose;
     }
 
     public void setNumOfRooms(int numOfRooms) {
@@ -56,7 +56,7 @@ public class Shuttle {
     }
 
     public String getResearchType() {
-        return this.researchType;
+        return this.researchPurpose;
     }
 
     public int getNumOfRooms() {

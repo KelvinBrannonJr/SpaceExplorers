@@ -34,11 +34,11 @@ public class Planet {
         this.isHabitableForHumans = false;
     }
 
-    public Planet(String planetName, int planetMass, PlanetTypes plType, boolean hasAtmosphere, double atmosphereTemp,
+    public Planet(String planetName, int planetMass, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
             boolean hasSurface, double surfaceTemp, String abundantResource, boolean isHabitableForHumans) {
         this.planetName = planetName;
         this.planetMass = planetMass;
-        this.planetTypes = plType;
+        this.planetTypes = planetType;
         this.hasAtmosphere = hasAtmosphere;
         this.atmosphereTemp = atmosphereTemp;
         this.hasSurface = hasSurface;
@@ -47,4 +47,36 @@ public class Planet {
         this.isHabitableForHumans = isHabitableForHumans;
     }
 
+    // Planet Setters
+    public void setPlanetName(String planetName) {
+        this.planetName = planetName;
+    }
+
+    public void setPlanetMass(int planetMass) {
+        this.planetMass = planetMass;
+    }
+
+    public void setPlanetTypes(PlanetTypes planetTypes) {
+        this.planetTypes = planetTypes;
+    }
+
+    public void setHasAtmosphere(boolean hasAtmosphere) {
+        this.hasAtmosphere = hasAtmosphere;
+    }
+
+    public void setAtmosphereTemp(double atmosphereTemp) {
+        this.atmosphereTemp = atmosphereTemp;
+    }
+
+    public void setHasSurface(boolean hasSurface) {
+        this.hasSurface = hasSurface;
+    }
+
+    public void setAbundantResource(String abundantResource) {
+        this.abundantResource = abundantResource;
+    }
+
+    public void setHabitableForHumans(boolean isHabitableForHumans) {
+        this.isHabitableForHumans = isHabitableForHumans;
+    }
 }

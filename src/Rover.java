@@ -28,19 +28,19 @@ public class Rover {
     }
 
     // Rover Setters
-    public void setRoverName(String rovName) {
-        this.roverName = rovName;
+    public void setRoverName(String roverName) {
+        this.roverName = roverName;
     }
 
-    public void setBatteryRange(double batRange) {
-        this.batteryRange = batRange;
+    public void setBatteryRange(double batteryRange) {
+        this.batteryRange = batteryRange;
     }
 
-    public void setHasSolarCharger(boolean solarCharge) {
-        this.hasSolarCharger = solarCharge;
+    public void setHasSolarCharger(boolean hasSolarCharger) {
+        this.hasSolarCharger = hasSolarCharger;
     }
 
-    public void setSensorTypes(SensorTypes sType) { this.sensorTypes = sType; }
+    public void setSensorTypes(SensorTypes sensorTypes) { this.sensorTypes = sensorTypes; }
 
     // Rover Getters
     public String getRoverName() {

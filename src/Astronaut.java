@@ -17,12 +17,12 @@ public class Astronaut {
     }
 
     // Astronaut Overloaded Constructor
-    public Astronaut(String name, String rank, String country, String skill, String shuttle) {
-        this.astronautName = name;
-        this.astronautRank = rank;
-        this.homeCountry = country;
-        this.uniqueSkill = skill;
-        this.shuttleName = shuttle;
+    public Astronaut(String astronautName, String astronautRank, String homeCountry, String uniqueSkill, String shuttleName) {
+        this.astronautName = astronautName;
+        this.astronautRank = astronautRank;
+        this.homeCountry = homeCountry;
+        this.uniqueSkill = uniqueSkill;
+        this.shuttleName = shuttleName;
     }
 
     // Astronaut Setters
