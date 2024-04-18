@@ -72,11 +72,52 @@ public class Planet {
         this.hasSurface = hasSurface;
     }
 
+    public void setSurfaceTemp(double surfaceTemp) {
+        this.surfaceTemp = surfaceTemp;
+    }
+
     public void setAbundantResource(String abundantResource) {
         this.abundantResource = abundantResource;
     }
 
     public void setHabitableForHumans(boolean isHabitableForHumans) {
         this.isHabitableForHumans = isHabitableForHumans;
+    }
+
+    // Planet Getters
+    public String getPlanetName() {
+        return this.planetName;
+    }
+
+    public int getPlanetMass() {
+        return this.planetMass;
+    }
+
+    public PlanetTypes getPlanetTypes() {
+        return this.planetTypes;
+    }
+
+    public boolean getHasAtmosphere() {
+        return this.hasAtmosphere;
+    }
+
+    public double getAtmosphereTemp() {
+        return this.atmosphereTemp;
+    }
+
+    public boolean getHasSurface() {
+        return this.hasSurface;
+    }
+
+    public double getSurfaceTemp() {
+        return this.surfaceTemp;
+    }
+
+    public String getAbundantResource() {
+        return this.abundantResource;
+    }
+
+    public boolean getIsHabitableForHumans() {
+        return this.isHabitableForHumans;
     }
 }
