@@ -6,9 +6,11 @@ public class Shuttle {
     private String researchPurpose;
     private int numOfRooms;
     private boolean hasRover;
-
+    private double thrustPower;
+    private double fuelCapacity;
     private Astronaut[] crew;
     private int crewCount;
+
 
     // Default Shuttle Constructors
     public Shuttle() {
@@ -17,16 +19,20 @@ public class Shuttle {
         this.researchPurpose = "Research Purpose Unknown";
         this.numOfRooms = 0;
         this.hasRover = false;
+        this.thrustPower = 0.0;
+        this.fuelCapacity = 0.0;
         this.crew = new Astronaut[crewCount];
     }
 
     // Overloaded Shuttle Constructor
-    public Shuttle(String shuttleName, String countryOrigin, String researchPurpose, int numOfRooms, boolean hasRover) {
+    public Shuttle(String shuttleName, String countryOrigin, String researchPurpose, int numOfRooms, boolean hasRover, double thrustPower, double fuelCapacity) {
         this.shuttleName = shuttleName;
         this.countryOrigin = countryOrigin;
         this.researchPurpose = researchPurpose;
         this.numOfRooms = numOfRooms;
         this.hasRover = hasRover;
+        this.thrustPower = thrustPower;
+        this.fuelCapacity = fuelCapacity;
         this.crew = new Astronaut[crewCount];
 
     }
@@ -52,6 +58,10 @@ public class Shuttle {
         this.hasRover = hasRover;
     }
 
+    public void setThrustPower(double thrustPower) { this.thrustPower = thrustPower; }
+
+    public void setFuelCapacity(double fuelCapacity) { this.fuelCapacity = fuelCapacity; }
+
     // Shuttle Getters
     public String getShuttleName() {
         return this.shuttleName;
@@ -72,4 +82,8 @@ public class Shuttle {
     public boolean getHasRover() {
         return this.hasRover;
     }
+
+    public double getThrustPower() { return thrustPower; }
+
+    public double getFuelCapacity() { return fuelCapacity; }
 }

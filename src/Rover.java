@@ -6,9 +6,14 @@ public class Rover {
     private boolean hasSolarCharger;
     private SensorTypes sensorTypes;
 
+    private MobilityTypes mobilityTypes;
+
 
     // Rover SensorType Enum
     public enum SensorTypes { DEFAULT, DOPPLER, INFERRED, MICROBIAL, SEISMIC }
+
+    // Rover MobilityType Enum
+    public enum MobilityTypes { DEFAULT, DRIVING, FLYING, SUBMERSIBLE }
 
 
     // Rover Constructors
@@ -17,13 +22,15 @@ public class Rover {
         this.batteryRange = 0.0;
         this.hasSolarCharger = false;
         this.sensorTypes = SensorTypes.DEFAULT;
+        this.mobilityTypes = MobilityTypes.DEFAULT;
     }
 
-    public void Rover(String roverName, double batteryRange, boolean hasSolarCharger, SensorTypes sensor) {
+    public void Rover(String roverName, double batteryRange, boolean hasSolarCharger, SensorTypes sensor, MobilityTypes mobilityTypes) {
         this.roverName = roverName;
         this.batteryRange = batteryRange;
         this.hasSolarCharger = hasSolarCharger;
         this.sensorTypes = sensor;
+        this.mobilityTypes = mobilityTypes;
 
     }
 
@@ -42,6 +49,8 @@ public class Rover {
 
     public void setSensorTypes(SensorTypes sensorTypes) { this.sensorTypes = sensorTypes; }
 
+    public void setMobilityTypes(MobilityTypes mobilityTypes) { this.mobilityTypes = mobilityTypes; }
+
     // Rover Getters
     public String getRoverName() {
         return this.roverName;
@@ -56,4 +65,6 @@ public class Rover {
     }
 
     public SensorTypes getSensorTypes() { return sensorTypes; }
+
+    public MobilityTypes getMobilityTypes() { return mobilityTypes; }
 }

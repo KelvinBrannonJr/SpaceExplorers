@@ -3,7 +3,6 @@ public class Planet {
     // Planet Private members
     private String planetName;
     private int planetMass;
-
     private double gravity;
     private PlanetTypes planetTypes;
 
@@ -11,15 +10,10 @@ public class Planet {
     public enum PlanetTypes { DEFAULT, ROCKY, LIQUID, GASEOUS, CRYSTALLINE }
 
     private boolean hasAtmosphere;
-
     private double atmosphereTemp;
-
     private boolean hasSurface;
-
     private double surfaceTemp;
-
     private String abundantResource;
-
     private boolean isHabitableForHumans;
 
     // Planet Constructors
