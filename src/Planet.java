@@ -4,6 +4,7 @@ public class Planet {
     private String planetName;
     private int planetMass;
 
+    private double gravity;
     private PlanetTypes planetTypes;
 
     // Planet Types Enum
@@ -25,6 +26,7 @@ public class Planet {
     public Planet() {
         this.planetName = "None";
         this.planetMass = 0;
+        this.gravity = 0.0;
         this.planetTypes = PlanetTypes.DEFAULT;
         this.hasAtmosphere = false;
         this.atmosphereTemp = 0.0;
@@ -34,10 +36,11 @@ public class Planet {
         this.isHabitableForHumans = false;
     }
 
-    public Planet(String planetName, int planetMass, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
+    public Planet(String planetName, int planetMass, double gravity, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
             boolean hasSurface, double surfaceTemp, String abundantResource, boolean isHabitableForHumans) {
         this.planetName = planetName;
         this.planetMass = planetMass;
+        this.gravity = gravity;
         this.planetTypes = planetType;
         this.hasAtmosphere = hasAtmosphere;
         this.atmosphereTemp = atmosphereTemp;
@@ -56,6 +59,8 @@ public class Planet {
         this.planetMass = planetMass;
     }
 
+    public void setGravity(double gravity) { this.gravity = gravity; }
+
     public void setPlanetTypes(PlanetTypes planetTypes) {
         this.planetTypes = planetTypes;
     }
@@ -64,9 +69,7 @@ public class Planet {
         this.hasAtmosphere = hasAtmosphere;
     }
 
-    public void setAtmosphereTemp(double atmosphereTemp) {
-        this.atmosphereTemp = atmosphereTemp;
-    }
+    public void setAtmosphereTemp(double atmosphereTemp) { this.atmosphereTemp = atmosphereTemp; }
 
     public void setHasSurface(boolean hasSurface) {
         this.hasSurface = hasSurface;
@@ -80,9 +83,7 @@ public class Planet {
         this.abundantResource = abundantResource;
     }
 
-    public void setHabitableForHumans(boolean isHabitableForHumans) {
-        this.isHabitableForHumans = isHabitableForHumans;
-    }
+    public void setHabitableForHumans(boolean isHabitableForHumans) { this.isHabitableForHumans = isHabitableForHumans; }
 
     // Planet Getters
     public String getPlanetName() {
@@ -92,6 +93,8 @@ public class Planet {
     public int getPlanetMass() {
         return this.planetMass;
     }
+
+    public double getGravity() { return this.gravity; }
 
     public PlanetTypes getPlanetTypes() {
         return this.planetTypes;
@@ -109,9 +112,7 @@ public class Planet {
         return this.hasSurface;
     }
 
-    public double getSurfaceTemp() {
-        return this.surfaceTemp;
-    }
+    public double getSurfaceTemp() { return this.surfaceTemp; }
 
     public String getAbundantResource() {
         return this.abundantResource;

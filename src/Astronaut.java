@@ -1,6 +1,7 @@
 public class Astronaut {
     // Astronaut private members
     private String astronautName;
+    private int astronautAge;
     private String astronautRank;
     private String homeCountry;
     private String uniqueSkill;
@@ -9,6 +10,7 @@ public class Astronaut {
     // Default Astronaut Constructor
     public Astronaut() {
         this.astronautName = "No Name";
+        this.astronautAge = 0;
         this.astronautRank = "No Rank";
         this.homeCountry = "No Country of Origin";
         this.uniqueSkill = "No specialty skill";
@@ -17,8 +19,9 @@ public class Astronaut {
     }
 
     // Astronaut Overloaded Constructor
-    public Astronaut(String astronautName, String astronautRank, String homeCountry, String uniqueSkill, String shuttleName) {
+    public Astronaut(String astronautName,int astronautAge, String astronautRank, String homeCountry, String uniqueSkill, String shuttleName) {
         this.astronautName = astronautName;
+        this.astronautAge = astronautAge;
         this.astronautRank = astronautRank;
         this.homeCountry = homeCountry;
         this.uniqueSkill = uniqueSkill;
@@ -29,6 +32,8 @@ public class Astronaut {
     public void setAstronautName(String astronautName) {
         this.astronautName = astronautName;
     }
+
+    public void setAstronautAge(int astronautAge) { this.astronautAge = astronautAge; }
 
     public void setAstronautRank(String astronautRank) {
         this.astronautRank = astronautRank;
@@ -50,6 +55,8 @@ public class Astronaut {
     public String getAstronautName() {
         return this.astronautName;
     }
+
+    public int getAstronautAge() { return this.astronautAge; }
 
     public String getAstronautRank() {
         return this.astronautRank;
