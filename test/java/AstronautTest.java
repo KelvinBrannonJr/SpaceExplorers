@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;;
+import static org.junit.Assert.assertTrue;
 
 public class AstronautTest {
 
@@ -28,8 +28,8 @@ public class AstronautTest {
         @Test
         public void setHomeCountry() {
             Astronaut astronaut = new Astronaut();
-            astronaut.setHomeCountry("testEarth");
-            assertTrue(astronaut.getHomeCountry().equals("testEarth"));
+            astronaut.setHomeCountry("testCountry");
+            assertTrue(astronaut.getHomeCountry().equals("testCountry"));
 
         }
 
@@ -71,8 +71,8 @@ public class AstronautTest {
         @Test
         public void getHomeCountry() {
             Astronaut astronaut = new Astronaut();
-            astronaut.setHomeCountry("testEarth");
-            assertTrue(astronaut.getHomeCountry().equals("testEarth"));
+            astronaut.setHomeCountry("testCountry");
+            assertTrue(astronaut.getHomeCountry().equals("testCountry"));
         }
 
         @Test

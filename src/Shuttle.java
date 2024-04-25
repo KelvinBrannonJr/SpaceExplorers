@@ -72,7 +72,7 @@ public class Shuttle {
         return this.countryOrigin;
     }
 
-    public String getResearchType() {
+    public String getResearchPurpose() {
         return this.researchPurpose;
     }
 
