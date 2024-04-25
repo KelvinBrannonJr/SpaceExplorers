@@ -17,7 +17,7 @@ public class Rover {
 
 
     // Rover Constructors
-    public void Rover() {
+    public Rover() {
         this.roverName = "None";
         this.batteryRange = 0.0;
         this.hasSolarCharger = false;
@@ -25,7 +25,7 @@ public class Rover {
         this.mobilityTypes = MobilityTypes.DEFAULT;
     }
 
-    public void Rover(String roverName, double batteryRange, boolean hasSolarCharger, SensorTypes sensor, MobilityTypes mobilityTypes) {
+    public Rover(String roverName, double batteryRange, boolean hasSolarCharger, SensorTypes sensor, MobilityTypes mobilityTypes) {
         this.roverName = roverName;
         this.batteryRange = batteryRange;
         this.hasSolarCharger = hasSolarCharger;
