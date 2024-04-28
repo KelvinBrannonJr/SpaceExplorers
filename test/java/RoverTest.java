@@ -41,21 +41,36 @@ class RoverTest {
 
     @Test
     void getRoverName() {
+        Rover rover = new Rover();
+        rover.setRoverName("testRover");
+        assertTrue(rover.getRoverName().equals("testRover"));
     }
 
     @Test
     void getBatteryRange() {
+        Rover rover = new Rover();
+        rover.setBatteryRange(100.0);
+        assertTrue(rover.getBatteryRange() == 100.0);
     }
 
     @Test
     void getHasSolarCharger() {
+        Rover rover = new Rover();
+        rover.setHasSolarCharger(true);
+        assertTrue(rover.getHasSolarCharger());
     }
 
     @Test
     void getSensorTypes() {
+        Rover rover = new Rover();
+        rover.setSensorTypes(Rover.SensorTypes.DOPPLER);
+        assertTrue(rover.getSensorTypes() == Rover.SensorTypes.DOPPLER);
     }
 
     @Test
     void getMobilityTypes() {
+        Rover rover = new Rover();
+        rover.setMobilityTypes(Rover.MobilityTypes.FLYING);
+        assertTrue(rover.getMobilityTypes() == Rover.MobilityTypes.FLYING);
     }
 }
