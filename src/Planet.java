@@ -2,7 +2,7 @@ public class Planet {
 
     // Planet Private members
     private String planetName;
-    private int planetMass;
+    private double planetMass;
     private double gravity;
     private PlanetTypes planetTypes;
 
@@ -19,7 +19,7 @@ public class Planet {
     // Planet Constructors
     public Planet() {
         this.planetName = "None";
-        this.planetMass = 0;
+        this.planetMass = 0.0;
         this.gravity = 0.0;
         this.planetTypes = PlanetTypes.DEFAULT;
         this.hasAtmosphere = false;
@@ -30,7 +30,7 @@ public class Planet {
         this.isHabitableForHumans = false;
     }
 
-    public Planet(String planetName, int planetMass, double gravity, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
+    public Planet(String planetName, double planetMass, double gravity, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
             boolean hasSurface, double surfaceTemp, String abundantResource, boolean isHabitableForHumans) {
         this.planetName = planetName;
         this.planetMass = planetMass;
@@ -49,7 +49,7 @@ public class Planet {
         this.planetName = planetName;
     }
 
-    public void setPlanetMass(int planetMass) {
+    public void setPlanetMass(double planetMass) {
         this.planetMass = planetMass;
     }
 
@@ -84,7 +84,7 @@ public class Planet {
         return this.planetName;
     }
 
-    public int getPlanetMass() {
+    public double getPlanetMass() {
         return this.planetMass;
     }
 
