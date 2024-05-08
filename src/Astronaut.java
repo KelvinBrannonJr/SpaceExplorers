@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Set;
 
 public class Astronaut {
@@ -8,7 +9,7 @@ public class Astronaut {
     private String homeCountry;
     private String uniqueSkill;
     private String shuttleName;
-    private Set<Astronaut> crew;
+    private Set<Astronaut> crew = new HashSet<>();
 
     // Default Astronaut Constructor
     public Astronaut() {
