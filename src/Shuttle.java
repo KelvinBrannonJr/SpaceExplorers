@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Shuttle {
 
     // Shuttle private members
@@ -10,8 +8,6 @@ public class Shuttle {
     private boolean hasRover;
     private double thrustPower;
     private double fuelCapacity;
-    private ArrayList<Astronaut> crew = new ArrayList<>();
-
 
     // Default Shuttle Constructors
     public Shuttle() {
@@ -22,7 +18,6 @@ public class Shuttle {
         this.hasRover = false;
         this.thrustPower = 0.0;
         this.fuelCapacity = 0.0;
-        this.crew = null;
     }
 
     // Overloaded Shuttle Constructor
@@ -34,8 +29,6 @@ public class Shuttle {
         this.hasRover = hasRover;
         this.thrustPower = thrustPower;
         this.fuelCapacity = fuelCapacity;
-        this.crew = null;
-
     }
 
     // Shuttle Setters

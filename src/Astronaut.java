@@ -1,3 +1,5 @@
+import java.util.Set;
+
 public class Astronaut {
     // Astronaut private members
     private String astronautName;
@@ -6,6 +8,7 @@ public class Astronaut {
     private String homeCountry;
     private String uniqueSkill;
     private String shuttleName;
+    private Set<Astronaut> crew;
 
     // Default Astronaut Constructor
     public Astronaut() {
@@ -15,7 +18,6 @@ public class Astronaut {
         this.homeCountry = "No Country of Origin";
         this.uniqueSkill = "No specialty skill";
         this.shuttleName = "No shuttle name";
-
     }
 
     // Astronaut Overloaded Constructor
@@ -72,5 +74,13 @@ public class Astronaut {
 
     public String getShuttleName() {
         return this.shuttleName;
+    }
+
+    // Astronaut Utility
+    public void addCrewPerson(Astronaut astronaut) {
+        this.crew.add(astronaut);
+    }
+    public Set<Astronaut> getCrew() {
+        return crew;
     }
 }
