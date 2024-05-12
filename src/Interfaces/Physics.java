@@ -1,6 +1,8 @@
 package Interfaces;
 
 
+import java.sql.Time;
+
 // Physics Interface
 public interface Physics {
     public double plotDistance(double home, double destination);

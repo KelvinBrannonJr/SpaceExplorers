@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 public class Astronaut {
@@ -77,7 +78,42 @@ public class Astronaut {
         return this.shuttleName;
     }
 
-    // Astronaut Utility
+    // Astronaut Utility Methods
+    public Astronaut createUserAstronaut() {
+        Astronaut userAstronaut = new Astronaut();
+
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Welcome, create your Astronaut Character:");
+
+        System.out.println("Enter your full name.");
+        String fullName = scn.nextLine();
+        userAstronaut.setAstronautName(fullName);
+
+        System.out.println("What is your age?");
+        int age = scn.nextInt();
+        userAstronaut.setAstronautAge(age);
+        scn.nextLine();
+
+        System.out.println("Enter your Crewman Rank.");
+        String rank = scn.nextLine();
+        userAstronaut.setAstronautRank(rank);
+
+        System.out.println("What is your home country?");
+        String country = scn.nextLine();
+        userAstronaut.setHomeCountry(country);
+
+        System.out.println("What is your specialized skill?");
+        String skill = scn.nextLine();
+        userAstronaut.setUniqueSkill(skill);
+
+        System.out.println("What is your original shuttle name?");
+        String originalShuttle = scn.nextLine();
+        userAstronaut.setShuttleName(originalShuttle);
+
+        System.out.println("Welcome " + userAstronaut.getAstronautRank() + " " + userAstronaut.getAstronautName());
+
+        return userAstronaut;
+    }
     public void addCrewPerson(Astronaut astronaut) {
         this.crew.add(astronaut);
     }
