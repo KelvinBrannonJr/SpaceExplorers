@@ -36,6 +36,12 @@ public class Shuttle {
         this.fuelCapacity = fuelCapacity;
     }
 
+    // Object toString() method
+    @Override
+    public String toString() {
+        return "Shuttle Name: " + shuttleName +" | Country of Origin: "+ countryOrigin +" | Research Purpose: "+ researchPurpose +" | Number of Rooms: "+ numOfRooms +" | Rover Equipped: "+ hasRover +" | Thrust Power: "+ thrustPower +" | Fuel Capacity: "+ fuelCapacity;
+    }
+
     // Shuttle Setters
     public void setShuttleName(String shuttleName) {
         this.shuttleName = shuttleName;
@@ -86,16 +92,29 @@ public class Shuttle {
 
     public double getFuelCapacity() { return fuelCapacity; }
 
+    public Set<Astronaut> getCrew() {
+        return this.crew;
+    }
+
     // Shuttle Utility Methods
+    public void printShuttle() {
+        System.out.println(this.toString());
+        System.out.println();
+    }
     public void addCrewPerson(Astronaut astronaut) {
         this.crew.add(astronaut);
     }
 
-    public void getCrew() {
+    public void printCrew() {
         crew.forEach(astronaut -> {
             System.out.println(astronaut.toString());
             System.out.println();
         });
     }
 
+    public void boardShuttle(Set<Astronaut>shuttleCrew, Shuttle shuttle) {
+        shuttleCrew.forEach(astronaut -> {
+            System.out.println(astronaut.getAstronautName() + " boarding " + shuttle.getShuttleName());
+        });
+    }
 }
