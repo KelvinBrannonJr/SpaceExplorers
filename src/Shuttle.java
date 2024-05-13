@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Shuttle {
 
     // Shuttle private members
@@ -8,6 +11,8 @@ public class Shuttle {
     private boolean hasRover;
     private double thrustPower;
     private double fuelCapacity;
+    private Set<Astronaut> crew = new HashSet<>();
+
 
     // Default Shuttle Constructors
     public Shuttle() {
@@ -80,4 +85,17 @@ public class Shuttle {
     public double getThrustPower() { return thrustPower; }
 
     public double getFuelCapacity() { return fuelCapacity; }
+
+    // Shuttle Utility Methods
+    public void addCrewPerson(Astronaut astronaut) {
+        this.crew.add(astronaut);
+    }
+
+    public void getCrew() {
+        crew.forEach(astronaut -> {
+            System.out.println(astronaut.toString());
+            System.out.println();
+        });
+    }
+
 }

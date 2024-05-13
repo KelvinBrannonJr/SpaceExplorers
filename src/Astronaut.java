@@ -10,7 +10,6 @@ public class Astronaut {
     private String homeCountry;
     private String uniqueSkill;
     private String shuttleName;
-    private Set<Astronaut> crew = new HashSet<>();
 
     // Default Astronaut Constructor
     public Astronaut() {
@@ -30,6 +29,12 @@ public class Astronaut {
         this.homeCountry = homeCountry;
         this.uniqueSkill = uniqueSkill;
         this.shuttleName = shuttleName;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "Name: " + astronautName +" | Age: "+ astronautAge +" | Rank: "+ astronautRank +" | Home Country: "+ homeCountry +" | Skill: "+ uniqueSkill +" | Original Shuttle: "+ shuttleName;
     }
 
     // Astronaut Setters
@@ -110,14 +115,9 @@ public class Astronaut {
         String originalShuttle = scn.nextLine();
         userAstronaut.setShuttleName(originalShuttle);
 
-        System.out.println("Welcome " + userAstronaut.getAstronautRank() + " " + userAstronaut.getAstronautName());
+        System.out.println("Welcome " + userAstronaut.getAstronautRank() + " " + userAstronaut.getAstronautName() + "!");
 
         return userAstronaut;
     }
-    public void addCrewPerson(Astronaut astronaut) {
-        this.crew.add(astronaut);
-    }
-    public Set<Astronaut> getCrew() {
-        return crew;
-    }
+
 }

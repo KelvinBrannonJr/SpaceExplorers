@@ -9,11 +9,15 @@ public class Main {
         Astronaut astronaut4 = new Astronaut();
         astronaut4 = astronaut4.createUserAstronaut();
 
-        // Add each Astronaut to the crew Set collection
-        astronaut1.addCrewPerson(astronaut1);
-        astronaut2.addCrewPerson(astronaut2);
-        astronaut3.addCrewPerson(astronaut3);
-        astronaut4.addCrewPerson(astronaut4);
+        // Add each Astronaut to the crew Set collection from Shuttle
+        Shuttle arwing = new Shuttle();
+
+        arwing.addCrewPerson(astronaut1);
+        arwing.addCrewPerson(astronaut2);
+        arwing.addCrewPerson(astronaut3);
+        arwing.addCrewPerson(astronaut4);
+
+        arwing.getCrew();
 
     }
 }
