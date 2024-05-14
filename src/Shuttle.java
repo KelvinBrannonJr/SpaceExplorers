@@ -1,5 +1,3 @@
-import Interfaces.ShuttlePhysics;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -119,4 +117,5 @@ public class Shuttle {
             System.out.println(astronaut.getAstronautName() + " boarding " + shuttle.getShuttleName());
         });
     }
+
 }
