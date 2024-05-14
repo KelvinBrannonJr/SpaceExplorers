@@ -2,9 +2,11 @@ package Interfaces;
 
 public interface ExploratoryMission {
 
-    public String selectDestination(String dest);
-    public int calculateDistance(int origin, int dest);
-    public boolean isSafeToLand(Object obj);
+    public void selectDestination(String dest);
+    public void calculateDistance(int home, int destination);
+    public void isSafeToLand(Object obj);
+
+    public void landOnSurface();
     public void deployRover(boolean hasShuttleRover);
     public void gatherResources();
     public void returnHome();

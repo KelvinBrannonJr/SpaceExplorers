@@ -9,7 +9,7 @@ public class Main {
         Astronaut astronaut4 = new Astronaut();
         astronaut4 = astronaut4.createUserAstronaut();
 
-        // Add each Astronaut to the crew Set collection from Shuttle
+        // Instantiate Shuttle object and add each Astronaut to the crew collection from Shuttle
         Shuttle arwing = new Shuttle("Arwing","United States","Exploration",6,true,8575.0,100.0);
 
         arwing.addCrewPerson(astronaut1);
@@ -17,8 +17,13 @@ public class Main {
         arwing.addCrewPerson(astronaut3);
         arwing.addCrewPerson(astronaut4);
 
+        // Print crew info
         arwing.printCrew();
+
+        // Print Shuttle info
         arwing.printShuttle();
+
+        // Board Astronaut crew on Shuttle
         arwing.boardShuttle(arwing.getCrew(),arwing);
 
     }
