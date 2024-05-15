@@ -1,7 +1,9 @@
+import Interfaces.ExploratoryMission;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class Shuttle {
+public class Shuttle implements ExploratoryMission {
 
     // Shuttle private members
     private String shuttleName;
@@ -118,4 +120,54 @@ public class Shuttle {
         });
     }
 
+    public void orbitObject(String planetName) {
+        System.out.println("Orbiting " + planetName);
+    }
+
+    public boolean isSafeToLand(Planet planet) {
+        if (planet.getHasSurface() && planet.getSurfaceTemp() < 250.0) {
+            System.out.println("Planet environment is stable to land shuttle");
+            return true;
+        }
+        else {
+            System.out.println("Planet environment is too harsh to land shuttle");
+            return false;
+        }
+    }
+    public void landOnSurface(boolean land, String planetName) {
+        if(land) {
+            System.out.println("Landing on Planet " + planetName);
+        }
+        else {
+            System.out.println("Landing protocol on Planet " + planetName + " denied..");
+        }
+    }
+
+    public void deployRover(boolean hasRover) {
+        System.out.println("Deploying shuttle's rover unit");
+    }
+
+    // ExploratoryMission Interface Methods
+    @Override
+    public String selectDestination(String dest) {
+        System.out.println("Routing to destination " + dest);
+        return dest;
+    }
+
+    @Override
+    public int calculateDistance(int originPos, int destinationPos) {
+        int distance = (destinationPos - originPos);
+        System.out.println("Distance between both positional points is: " + distance);
+        return distance;
+    }
+
+    @Override
+    public void gatherResources(String resource) {
+        System.out.println("Harvesting resource " + resource);
+    }
+
+    @Override
+    public void returnHome(String originPlanetName) {
+        System.out.println("Returning to Home Planet " + originPlanetName);
+    }
 }
