@@ -69,6 +69,10 @@ public class Shuttle implements ExploratoryMission {
 
     public void setFuelCapacity(double fuelCapacity) { this.fuelCapacity = fuelCapacity; }
 
+    public void setCrew(Set<Astronaut> crew) {
+        this.crew = crew;
+    }
+
     // Shuttle Getters
     public String getShuttleName() {
         return this.shuttleName;
