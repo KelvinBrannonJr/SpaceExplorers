@@ -27,14 +27,14 @@ public class Main {
         arwing.boardShuttle(arwing.getCrew(),arwing);
 
         // Create home planet object of the crew and display planet info
-        Planet earth = new Planet("Earth", 5.97, 9.8, 0, Planet.PlanetTypes.TERRESTRIAL, true, 15, true, 15, "Water", true);
+        Planet earth = new Planet("Earth", 5.97, 9.8, 0.0, Planet.PlanetTypes.TERRESTRIAL, true, 15, true, 15, "Water", true);
         System.out.println(earth.toString());
 
         // Get planet name and store in origin variable
         String origin = earth.getPlanetName();
 
-        Planet mars = new Planet("Mars", 0.642, 3.7, 140, Planet.PlanetTypes.TERRESTRIAL, true, -65, true, -65, "Silicon Dioxide", true);
-        System.out.println(earth.toString());
+        Planet mars = new Planet("Mars", 0.642, 3.7, 140.0, Planet.PlanetTypes.TERRESTRIAL, true, -65, true, -65, "Silicon Dioxide", true);
+        System.out.println(mars.toString());
 
         String destination = mars.getPlanetName();
     }

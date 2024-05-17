@@ -5,7 +5,7 @@ public class Planet {
     private double planetMass;
     private double gravity;
 
-    private int distanceFromEarth;
+    private double distanceFromEarth;
     private PlanetTypes planetTypes;
 
     // Planet Types Enum
@@ -23,7 +23,7 @@ public class Planet {
         this.planetName = "None";
         this.planetMass = 0.0;
         this.gravity = 0.0;
-        this.distanceFromEarth = 0;
+        this.distanceFromEarth = 0.0;
         this.planetTypes = PlanetTypes.DEFAULT;
         this.hasAtmosphere = false;
         this.atmosphereTemp = 0.0;
@@ -33,7 +33,7 @@ public class Planet {
         this.isHabitableForHumans = false;
     }
 
-    public Planet(String planetName, double planetMass, double gravity, int distanceFromEarth, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
+    public Planet(String planetName, double planetMass, double gravity, double distanceFromEarth, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
             boolean hasSurface, double surfaceTemp, String abundantResource, boolean isHabitableForHumans) {
         this.planetName = planetName;
         this.planetMass = planetMass;
@@ -54,7 +54,7 @@ public class Planet {
         return "Planet name: " + planetName +
                 " | Planet mass: " + planetMass +
                 " | Gravity: " + gravity +
-                " | Distance From Earth: " + distanceFromEarth +
+                " | Distance From Earth: " + distanceFromEarth * Math.pow(10.0,8.0) +
                 " | Planet classification: " + planetTypes.toString() +
                 " | Has Atmosphere: " + hasAtmosphere +
                 " | Atmosphere Temp: " + atmosphereTemp +
@@ -75,7 +75,7 @@ public class Planet {
 
     public void setGravity(double gravity) { this.gravity = gravity; }
 
-    public void setDistanceFromEarth(int distanceFromEarth) { this.distanceFromEarth = distanceFromEarth; }
+    public void setDistanceFromEarth(double distanceFromEarth) { this.distanceFromEarth = distanceFromEarth; }
 
     public void setPlanetTypes(PlanetTypes planetTypes) {
         this.planetTypes = planetTypes;
@@ -112,7 +112,7 @@ public class Planet {
 
     public double getGravity() { return this.gravity; }
 
-    public int getDistanceFromEarth() { return this.distanceFromEarth; }
+    public double getDistanceFromEarth() { return (this.distanceFromEarth * Math.pow(10.0,8.0)); }
 
     public PlanetTypes getPlanetTypes() {
         return this.planetTypes;
