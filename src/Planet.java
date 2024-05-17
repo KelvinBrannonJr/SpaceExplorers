@@ -4,6 +4,8 @@ public class Planet {
     private String planetName;
     private double planetMass;
     private double gravity;
+
+    private int distanceFromEarth;
     private PlanetTypes planetTypes;
 
     // Planet Types Enum
@@ -21,6 +23,7 @@ public class Planet {
         this.planetName = "None";
         this.planetMass = 0.0;
         this.gravity = 0.0;
+        this.distanceFromEarth = 0;
         this.planetTypes = PlanetTypes.DEFAULT;
         this.hasAtmosphere = false;
         this.atmosphereTemp = 0.0;
@@ -30,11 +33,12 @@ public class Planet {
         this.isHabitableForHumans = false;
     }
 
-    public Planet(String planetName, double planetMass, double gravity, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
+    public Planet(String planetName, double planetMass, double gravity, int distanceFromEarth, PlanetTypes planetType, boolean hasAtmosphere, double atmosphereTemp,
             boolean hasSurface, double surfaceTemp, String abundantResource, boolean isHabitableForHumans) {
         this.planetName = planetName;
         this.planetMass = planetMass;
         this.gravity = gravity;
+        this.distanceFromEarth = distanceFromEarth;
         this.planetTypes = planetType;
         this.hasAtmosphere = hasAtmosphere;
         this.atmosphereTemp = atmosphereTemp;
@@ -54,6 +58,8 @@ public class Planet {
     }
 
     public void setGravity(double gravity) { this.gravity = gravity; }
+
+    public void setDistanceFromEarth(int distanceFromEarth) { this.distanceFromEarth = distanceFromEarth; }
 
     public void setPlanetTypes(PlanetTypes planetTypes) {
         this.planetTypes = planetTypes;
@@ -89,6 +95,8 @@ public class Planet {
     }
 
     public double getGravity() { return this.gravity; }
+
+    public int getDistanceFromEarth() { return this.distanceFromEarth; }
 
     public PlanetTypes getPlanetTypes() {
         return this.planetTypes;

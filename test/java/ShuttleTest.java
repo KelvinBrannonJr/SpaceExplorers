@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -124,6 +125,25 @@ public class ShuttleTest {
 
         assertTrue(shuttle.getCrew().equals(shuttle2.getCrew()));
     }
+
+    @Test
+    public void printShuttle() {
+        Shuttle shuttle = new Shuttle();
+        String strShuttle = shuttle.toString();
+        Assert.assertTrue(strShuttle.equals(shuttle.toString()));
+    }
+
+    @Test
+    public void addCrewPerson() {
+        Astronaut astronaut = new Astronaut();
+        Astronaut astronaut2 = new Astronaut();
+        Shuttle shuttle = new Shuttle();
+        shuttle.addCrewPerson(astronaut);
+        shuttle.addCrewPerson(astronaut2);
+        assertTrue(shuttle.getCrew().size() == 2);
+    }
+
+
 
 
 }
