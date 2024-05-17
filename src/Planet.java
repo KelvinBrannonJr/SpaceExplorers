@@ -9,7 +9,7 @@ public class Planet {
     private PlanetTypes planetTypes;
 
     // Planet Types Enum
-    public enum PlanetTypes { DEFAULT, ROCKY, LIQUID, GASEOUS, CRYSTALLINE }
+    public enum PlanetTypes { DEFAULT, TERRESTRIAL, LIQUID, GASEOUS, MINERAL_CRYSTALLINE, ICE }
 
     private boolean hasAtmosphere;
     private double atmosphereTemp;
@@ -46,6 +46,22 @@ public class Planet {
         this.surfaceTemp = surfaceTemp;
         this.abundantResource = abundantResource;
         this.isHabitableForHumans = isHabitableForHumans;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println();
+        return "Planet name: " + planetName +
+                " | Planet mass: " + planetMass +
+                " | Gravity: " + gravity +
+                " | Distance From Earth: " + distanceFromEarth +
+                " | Planet classification: " + planetTypes.toString() +
+                " | Has Atmosphere: " + hasAtmosphere +
+                " | Atmosphere Temp: " + atmosphereTemp +
+                " | Has Surface: " + hasSurface +
+                " | Surface Temp: " + surfaceTemp +
+                " | Abundant Resource: " + abundantResource +
+                " | Is Habitable For Humans: " + isHabitableForHumans;
     }
 
     // Planet Setters

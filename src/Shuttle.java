@@ -41,7 +41,14 @@ public class Shuttle implements ExploratoryMission {
     // Object toString() method
     @Override
     public String toString() {
-        return "Shuttle Name: " + shuttleName +" | Country of Origin: "+ countryOrigin +" | Research Purpose: "+ researchPurpose +" | Number of Rooms: "+ numOfRooms +" | Rover Equipped: "+ hasRover +" | Thrust Power: "+ thrustPower +" | Fuel Capacity: "+ fuelCapacity;
+        System.out.println();
+        return "Shuttle Name: " + shuttleName +
+                " | Country of Origin: " + countryOrigin +
+                " | Research Purpose: " + researchPurpose +
+                " | Number of Rooms: " + numOfRooms +
+                " | Rover Equipped: " + hasRover +
+                " | Thrust Power: " + thrustPower +
+                " | Fuel Capacity: " + fuelCapacity;
     }
 
     // Shuttle Setters
@@ -103,10 +110,6 @@ public class Shuttle implements ExploratoryMission {
     }
 
     // Shuttle Utility Methods
-    public void printShuttle() {
-        System.out.println(this.toString());
-        System.out.println();
-    }
     public void addCrewPerson(Astronaut astronaut) {
         this.crew.add(astronaut);
     }

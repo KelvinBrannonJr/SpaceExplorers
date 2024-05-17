@@ -21,10 +21,12 @@ public class Main {
         arwing.printCrew();
 
         // Print Shuttle info
-        arwing.printShuttle();
+        System.out.println(arwing.toString());
 
         // Board Astronaut crew on Shuttle
         arwing.boardShuttle(arwing.getCrew(),arwing);
 
+        Planet earth = new Planet("Earth", 5.97, 9.8, 0, Planet.PlanetTypes.TERRESTRIAL, true, 15, true, 15, "Water", true);
+        System.out.println(earth.toString());
     }
 }
