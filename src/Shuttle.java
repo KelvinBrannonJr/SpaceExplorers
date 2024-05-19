@@ -157,7 +157,8 @@ public class Shuttle implements ExploratoryMission {
     // ExploratoryMission Interface Methods
     @Override
     public String selectDestination(String dest) {
-        System.out.println("Routing to destination " + dest);
+        System.out.println("Selecting destination... ");
+        System.out.println("Routing to destination: " + dest);
         return dest;
     }
 

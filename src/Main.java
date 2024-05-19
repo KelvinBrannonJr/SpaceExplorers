@@ -36,6 +36,8 @@ public class Main {
         Planet mars = new Planet("Mars", 0.642, 3.7, 140.0, Planet.PlanetTypes.TERRESTRIAL, true, -65, true, -65, "Silicon Dioxide", true);
         System.out.println(mars.toString());
 
-        String destination = mars.getPlanetName();
+        System.out.println();
+        String destination = arwing.selectDestination(mars.getPlanetName());
+
     }
 }
