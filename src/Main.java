@@ -26,18 +26,25 @@ public class Main {
         // Board Astronaut crew on Shuttle
         arwing.boardShuttle(arwing.getCrew(),arwing);
 
-        // Create home planet object of the crew and display planet info
+        // Create origin planet object and display planet info
         Planet earth = new Planet("Earth", 5.97, 9.8, 0.0, Planet.PlanetTypes.TERRESTRIAL, true, 15, true, 15, "Water", true);
         System.out.println(earth.toString());
 
         // Get planet name and store in origin variable
-        String origin = earth.getPlanetName();
+        String origin = arwing.selectOriginPlanet(earth.getPlanetName());
+        double originDistance = earth.getDistanceFromEarth();
 
+        // Create Destination planet object and display planet info
         Planet mars = new Planet("Mars", 0.642, 3.7, 140.0, Planet.PlanetTypes.TERRESTRIAL, true, -65, true, -65, "Silicon Dioxide", true);
         System.out.println(mars.toString());
 
-        System.out.println();
-        String destination = arwing.selectDestination(mars.getPlanetName());
+        // Get planet name and store it in destination variable
+        String destination = arwing.selectDestinationPlanet(mars.getPlanetName());
+        double destinationDistance = mars.getDistanceFromEarth();
+
+        double measuredDistance = arwing.calculateDistance(originDistance, destinationDistance);
+        System.out.println("Distance between "  + origin + " and " + destination + " positional points: " + measuredDistance);
+
 
     }
 }

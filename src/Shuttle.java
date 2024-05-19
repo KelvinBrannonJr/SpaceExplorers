@@ -156,17 +156,22 @@ public class Shuttle implements ExploratoryMission {
 
     // ExploratoryMission Interface Methods
     @Override
-    public String selectDestination(String dest) {
-        System.out.println("Selecting destination... ");
-        System.out.println("Routing to destination: " + dest);
+    public String selectDestinationPlanet(String dest) {
+        System.out.println();
+        System.out.println("Shuttle crew has entered " + dest + " as destination planet.");
         return dest;
     }
 
     @Override
-    public int calculateDistance(int originPos, int destinationPos) {
-        int distance = (destinationPos - originPos);
-        System.out.println("Distance between both positional points is: " + distance);
-        return distance;
+    public String selectOriginPlanet(String originPlanetName) {
+        System.out.println();
+        System.out.println("Shuttle crew has entered " + originPlanetName + " as origin planet");
+        return originPlanetName;
+    }
+
+    @Override
+    public double calculateDistance(double originPos, double destinationPos) {
+        return destinationPos - originPos;
     }
 
     @Override
@@ -174,8 +179,4 @@ public class Shuttle implements ExploratoryMission {
         System.out.println("Harvesting resource " + resource);
     }
 
-    @Override
-    public void returnHome(String originPlanetName) {
-        System.out.println("Returning to Home Planet " + originPlanetName);
-    }
 }
