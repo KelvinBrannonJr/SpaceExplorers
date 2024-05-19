@@ -9,9 +9,11 @@ public class Main {
         Astronaut astronaut4 = new Astronaut();
         astronaut4 = astronaut4.createUserAstronaut();
 
-        // Instantiate Shuttle object and add each Astronaut to the crew collection from Shuttle
-        Shuttle arwing = new Shuttle("Arwing","United States","Exploration",6,true,8575.0,100.0);
+        // Instantiate Shuttle object and display info
+        Shuttle arwing = new Shuttle("Arwing","United States","Exploration",6,true,213000.0,100.0);
+        System.out.println(arwing.toString());
 
+        // Add each Astronaut to the crew collection from Shuttle
         arwing.addCrewPerson(astronaut1);
         arwing.addCrewPerson(astronaut2);
         arwing.addCrewPerson(astronaut3);
@@ -42,9 +44,11 @@ public class Main {
         String destination = arwing.selectDestinationPlanet(mars.getPlanetName());
         double destinationDistance = mars.getDistanceFromEarth();
 
+        // Measure distance between origin and destination planets
         double measuredDistance = arwing.calculateDistance(originDistance, destinationDistance);
         System.out.println("Distance between "  + origin + " and " + destination + " positional points: " + measuredDistance);
 
-
+        // Calculate estimated time for travel between origin and destination
+        arwing.travel(arwing.getThrustPower(), measuredDistance);
     }
 }

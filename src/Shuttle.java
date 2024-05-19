@@ -179,4 +179,11 @@ public class Shuttle implements ExploratoryMission {
         System.out.println("Harvesting resource " + resource);
     }
 
+    @Override
+    public void travel(double shuttleThrustPower, double calculatedDistance) {
+        double time = Math.round((Math.round(calculatedDistance / shuttleThrustPower) / 24.0) / 365);
+        System.out.println();
+        System.out.println("Shuttle speed " + shuttleThrustPower + " MPH");
+        System.out.println("Estimated shuttle travel time: " + time + " years");
+    }
 }
