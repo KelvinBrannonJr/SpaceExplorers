@@ -6,5 +6,5 @@ public interface ExploratoryMission {
     public double calculateDistance(double originPos, double destinationPos);
     public void gatherResources(String resource);
 
-    public void travel(double shuttleThrustPower, double calculatedDistance);
+    public double travel(double shuttleThrustPower, double calculatedDistance);
 }

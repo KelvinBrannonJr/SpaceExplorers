@@ -49,6 +49,9 @@ public class Main {
         System.out.println("Distance between "  + origin + " and " + destination + " positional points: " + measuredDistance);
 
         // Calculate estimated time for travel between origin and destination
-        arwing.travel(arwing.getThrustPower(), measuredDistance);
+        double estimatedTravelTime = arwing.travel(arwing.getThrustPower(), measuredDistance);
+
+        // Check the age of each crew member, if the collective age is greater than estimated travel years, permit travel
+        boolean isTravelPermitted = arwing.isDistanceTooFar(arwing.getCrew(), estimatedTravelTime);
     }
 }
