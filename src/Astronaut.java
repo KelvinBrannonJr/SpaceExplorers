@@ -3,6 +3,10 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Astronaut {
+    // Astronaut public member
+    public final int AGE_LIMIT = 65;
+
+
     // Astronaut private members
     private String astronautName;
     private int astronautAge;
@@ -96,6 +100,10 @@ public class Astronaut {
 
         System.out.println("What is your age?");
         int age = scn.nextInt();
+        if (age > AGE_LIMIT) {
+            System.out.println("Despite the great John Glenn, space is too hazardous for that age.. system will auto-cap at 65yrs old instead.");
+            age = AGE_LIMIT;
+        }
         userAstronaut.setAstronautAge(age);
         scn.nextLine();
 

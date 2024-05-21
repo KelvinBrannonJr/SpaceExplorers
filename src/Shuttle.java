@@ -1,4 +1,5 @@
 import Interfaces.ExploratoryMission;
+import com.google.common.util.concurrent.AtomicDouble;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -129,7 +130,7 @@ public class Shuttle implements ExploratoryMission {
     }
 
     public boolean isDistanceTooFar(Set<Astronaut>shuttleCrew, double timeVal) {
-        AtomicInteger crewCollectiveAge = new AtomicInteger();
+        AtomicDouble crewCollectiveAge = new AtomicDouble();
         shuttleCrew.forEach(astronaut -> {
             crewCollectiveAge.addAndGet(astronaut.getAstronautAge());
         });
@@ -138,7 +139,7 @@ public class Shuttle implements ExploratoryMission {
             return false;
         }
         else {
-            System.out.println("Travel sequence aborted.. The total age of the crew is less than the travel destination estimate years.");
+            System.out.println("Travel sequence aborted... The total age of the crew is: " + crewCollectiveAge + " years, which is less than the travel destination estimate: " + timeVal + " years.");
             return true;
         }
     }
