@@ -7,4 +7,5 @@ public interface ExploratoryMission {
     public void gatherResources(String resource);
 
     public double travel(double shuttleThrustPower, double calculatedDistance);
+    public void arrivalToPlanet(String destinationPlanet);
 }

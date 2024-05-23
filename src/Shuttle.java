@@ -145,7 +145,7 @@ public class Shuttle implements ExploratoryMission {
     }
 
     public void orbitObject(String planetName) {
-        System.out.println("Orbiting " + planetName);
+        System.out.println("Shuttle commenced orbiting planet " + planetName);
     }
 
     public boolean isSafeToLand(Planet planet) {
@@ -203,5 +203,11 @@ public class Shuttle implements ExploratoryMission {
         System.out.println("Shuttle speed " + shuttleThrustPower + " MPH");
         System.out.println("Estimated shuttle travel time: " + time + " years");
         return time;
+    }
+
+    @Override
+    public void arrivalToPlanet(String destinationPlanet) {
+        System.out.println();
+        System.out.println("Shuttle has arrived at planet " + destinationPlanet + "!");
     }
 }

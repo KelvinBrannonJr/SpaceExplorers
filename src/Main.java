@@ -53,5 +53,9 @@ public class Main {
 
         // Check the age of each crew member, if the collective age is greater than estimated travel years, permit travel
         boolean isTravelPermitted = arwing.isDistanceTooFar(arwing.getCrew(), estimatedTravelTime);
+
+        // Arrive at destination planet and orbit planet
+        arwing.arrivalToPlanet(mars.getPlanetName());
+        arwing.orbitObject(mars.getPlanetName());
     }
 }
