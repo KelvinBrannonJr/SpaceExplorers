@@ -3,9 +3,11 @@ import com.google.common.util.concurrent.AtomicDouble;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Shuttle implements ExploratoryMission {
+
+    public final double MAX_PLANET_TEMP = 250.0;
+    public final double MIN_PLANET_TEMP = -250.0;
 
     // Shuttle private members
     private String shuttleName;
@@ -125,7 +127,7 @@ public class Shuttle implements ExploratoryMission {
 
     public void boardShuttle(Set<Astronaut>shuttleCrew, Shuttle shuttle) {
         shuttleCrew.forEach(astronaut -> {
-            System.out.println(astronaut.getAstronautName() + " boarding " + shuttle.getShuttleName());
+            System.out.println(astronaut.getAstronautName() + " boarding " + shuttle.getShuttleName() + ".");
         });
     }
 
@@ -145,22 +147,29 @@ public class Shuttle implements ExploratoryMission {
     }
 
     public void orbitObject(String planetName) {
-        System.out.println("Shuttle commenced orbiting planet " + planetName);
+        System.out.println("Shuttle commenced orbiting planet " + planetName + ".");
     }
 
     public boolean isSafeToLand(Planet planet) {
-        if (planet.getHasSurface() && planet.getSurfaceTemp() < 250.0) {
-            System.out.println("Planet environment is stable to land shuttle");
-            return true;
+        if (planet.getHasSurface()) {
+            if (planet.getSurfaceTemp() <= MAX_PLANET_TEMP && planet.getSurfaceTemp() >= MIN_PLANET_TEMP) {
+                System.out.println("Planet has surface and environment temperature is stable enough to land shuttle.");
+                return true;
+            }
+            else {
+                System.out.println("Planet has surface, but the environment temperature is too harsh to land shuttle..");
+                return false;
+            }
         }
         else {
-            System.out.println("Planet environment is too harsh to land shuttle");
+            System.out.println("Planet does not have a surface to land shuttle..");
             return false;
         }
+
     }
     public void landOnSurface(boolean land, String planetName) {
         if(land) {
-            System.out.println("Landing on Planet " + planetName);
+            System.out.println("Landing on Planet " + planetName + ".");
         }
         else {
             System.out.println("Landing protocol on Planet " + planetName + " denied..");
@@ -168,7 +177,7 @@ public class Shuttle implements ExploratoryMission {
     }
 
     public void deployRover(boolean hasRover) {
-        System.out.println("Deploying shuttle's rover unit");
+        System.out.println("Deploying shuttle's rover unit.");
     }
 
     // ExploratoryMission Interface Methods

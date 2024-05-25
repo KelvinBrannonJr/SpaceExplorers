@@ -57,5 +57,9 @@ public class Main {
         // Arrive at destination planet and orbit planet
         arwing.arrivalToPlanet(mars.getPlanetName());
         arwing.orbitObject(mars.getPlanetName());
+
+        // Is planet safe to land shuttle
+        boolean hasShuttleLanded = arwing.isSafeToLand(mars);
+        arwing.landOnSurface(hasShuttleLanded, mars.getPlanetName());
     }
 }
