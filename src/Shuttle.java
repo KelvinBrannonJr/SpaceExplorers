@@ -153,32 +153,42 @@ public class Shuttle implements ExploratoryMission {
     public boolean isSafeToLand(Planet planet) {
         if (planet.getHasSurface()) {
             if (planet.getSurfaceTemp() <= MAX_PLANET_TEMP && planet.getSurfaceTemp() >= MIN_PLANET_TEMP) {
-                System.out.println("Planet has surface and environment temperature is stable enough to land shuttle.");
+                System.out.println();
+                System.out.println("Planet has a surface and the environment temperature is stable enough to land the shuttle.");
                 return true;
             }
             else {
-                System.out.println("Planet has surface, but the environment temperature is too harsh to land shuttle..");
+                System.out.println();
+                System.out.println("Planet has a surface, but the environment temperature is too harsh to land the shuttle..");
                 return false;
             }
         }
         else {
+            System.out.println();
             System.out.println("Planet does not have a surface to land shuttle..");
             return false;
         }
 
     }
 
-    public void deployRover(boolean hasShuttleRover, boolean hasPlanetSurface) {
-        if (hasShuttleRover) {
-            if(hasPlanetSurface) {
-                System.out.println("Deploying shuttle's rover unit.");
+    public void deployRover(boolean hasShuttleRover, boolean hasPlanetSurface, boolean hasShuttleLanded) {
+        System.out.println();
+        System.out.println("Initiating the process of deploying the shuttle's rover unit..");
+        if (!hasShuttleLanded){
+            if (hasShuttleRover) {
+                if(hasPlanetSurface) {
+                    System.out.println("Deployed rover unit.");
+                }
+                else {
+                    System.out.println("Sorry the planet does not have a surface to deploy the rover unit to..");
+                }
             }
             else {
-                System.out.println("Sorry the planet does not have a surface to deploy the rover unit to..");
+                System.out.println("Sorry the shuttle is not equipped with a rover unit..");
             }
         }
         else {
-            System.out.println("Sorry shuttle is not equipped with a rover unit..");
+            System.out.println("No need to deploy the rover unit if the crew can safely land on the planet's surface.");
         }
     }
 
@@ -223,12 +233,14 @@ public class Shuttle implements ExploratoryMission {
     }
 
     @Override
-    public void landOnSurface(boolean land, String planetName) {
+    public boolean landOnSurface(boolean land, String planetName) {
         if(land) {
             System.out.println("Landing on Planet " + planetName + ".");
+            return true;
         }
         else {
             System.out.println("Landing protocol on Planet " + planetName + " denied..");
+            return false;
         }
     }
 

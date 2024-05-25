@@ -6,7 +6,7 @@ public interface ExploratoryMission {
     public double calculateDistance(double originPos, double destinationPos);
     public double travel(double shuttleThrustPower, double calculatedDistance);
     public void arrivalToPlanet(String destinationPlanet);
-    public void landOnSurface(boolean land, String planetName);
+    public boolean landOnSurface(boolean land, String planetName);
     public void gatherResources(String resource);
 
 }
