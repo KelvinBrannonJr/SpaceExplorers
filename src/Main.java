@@ -59,7 +59,10 @@ public class Main {
         arwing.orbitObject(mars.getPlanetName());
 
         // Is planet safe to land shuttle
-        boolean hasShuttleLanded = arwing.isSafeToLand(mars);
-        arwing.landOnSurface(hasShuttleLanded, mars.getPlanetName());
+        boolean isSafe = arwing.isSafeToLand(mars);
+        arwing.landOnSurface(isSafe, mars.getPlanetName());
+
+        // Check if shuttle has a rover unit onboard and deploy if shuttle cannot land and planet has a surface
+        arwing.deployRover(arwing.getHasRover(), mars.getHasSurface());
     }
 }
