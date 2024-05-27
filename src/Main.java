@@ -60,14 +60,19 @@ public class Main {
 
         // Is planet safe to land shuttle
         boolean isSafe = arwing.isSafeToLand(mars);
+
+        // Planet environment is safe so crew can physically land on surface
         boolean hasLanded = arwing.landOnSurface(isSafe, mars.getPlanetName());
 
         // Check if shuttle has a rover unit onboard and deploy if shuttle cannot land and planet has a surface
         arwing.deployRover(arwing.getHasRover(), mars.getHasSurface(), hasLanded);
 
         /*
-            **** Need to figure out a way ****
-            - if shuttle should deploy rover unit while in orbit if the planet is not safe to land
-        */
+                **** Fix semantics of the method calls ***
+
+                Figure a way to call deployRover() after orbitObject(),
+                doesn't make sense to call the method after crew landed on surface...
+                * Maybe forward declaration of deployRover or decouple the methods
+         */
     }
 }
