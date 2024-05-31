@@ -165,22 +165,17 @@ public class Shuttle implements ExploratoryMission {
         }
         else {
             System.out.println();
-            System.out.println("Planet does not have a surface to land shuttle..");
+            System.out.println("Planet does not have a surface to land the shuttle or deploy a rover to..");
             return false;
         }
 
     }
 
-    public void deployRover(boolean hasShuttleRover, boolean hasPlanetSurface) {
+    public void deployRover(boolean hasShuttleRover) {
         System.out.println();
         System.out.println("Initiating the process of deploying the shuttle's rover unit..");
         if (hasShuttleRover) {
-            if(hasPlanetSurface) {
-                System.out.println("Deployed rover unit.");
-            }
-            else {
-                System.out.println("Sorry the planet does not have a surface to deploy the rover unit to..");
-            }
+            System.out.println("Deployed rover unit!");
         }
         else {
             System.out.println("Sorry the shuttle is not equipped with a rover unit..");

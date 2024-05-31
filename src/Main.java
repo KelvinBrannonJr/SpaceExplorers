@@ -40,7 +40,7 @@ public class Main {
         double originDistance = earth.getDistanceFromEarth();
 
         // Create Destination planet object and display planet info
-        Planet mars = new Planet("Mars", 0.642, 3.7, 140.0, Planet.PlanetTypes.TERRESTRIAL, true, -65, true, -665, "Silicon Dioxide", true);
+        Planet mars = new Planet("Mars", 0.642, 3.7, 140.0, Planet.PlanetTypes.TERRESTRIAL, true, -65, true, -65, "Silicon Dioxide", true);
         System.out.println(mars.toString());
 
         // Get planet name and store it in destination variable
@@ -70,11 +70,13 @@ public class Main {
         }
         else {
             if (!isSafe && mars.getHasSurface()) {
-                System.out.print("The Rover is suitable for harsh environments, would you like to try to deploy the rover instead? Y/N : ");
+                System.out.print("A rover is most suitable for harsh environments, would you like to try to deploy the rover instead? Y/N : ");
                 String input = scn.next();
+
                 if (input.equals("Y") || input.equals("y")) {
+
                     // Check if shuttle has a rover unit onboard and deploy if shuttle cannot land and planet has a surface
-                    arwing.deployRover(arwing.getHasRover(), mars.getHasSurface());
+                    arwing.deployRover(arwing.getHasRover());
                 }
                 else if (input.equals("N") || input.equals("n")) {
                     System.out.println("Rover initiation sequence aborted.");
@@ -84,6 +86,8 @@ public class Main {
                 }
             }
         }
+
+
 
     }
 }
