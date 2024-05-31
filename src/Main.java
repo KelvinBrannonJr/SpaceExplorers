@@ -2,6 +2,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        // Scanner input object
+        Scanner scn = new Scanner(System.in);
+
         // Create Astronaut Objects
         Astronaut astronaut1 = new Astronaut("Blake Johnson",25, "Candidate", "America", "Hvac Systems", "Emergence");
         Astronaut astronaut2 = new Astronaut("Aiko Takahasi",37, "Astronaut", "Japan", "Atmospheric Chemist", "Hinoki");
@@ -37,7 +40,7 @@ public class Main {
         double originDistance = earth.getDistanceFromEarth();
 
         // Create Destination planet object and display planet info
-        Planet mars = new Planet("Mars", 0.642, 3.7, 140.0, Planet.PlanetTypes.TERRESTRIAL, true, -65, true, -65, "Silicon Dioxide", true);
+        Planet mars = new Planet("Mars", 0.642, 3.7, 140.0, Planet.PlanetTypes.TERRESTRIAL, true, -65, true, -665, "Silicon Dioxide", true);
         System.out.println(mars.toString());
 
         // Get planet name and store it in destination variable
@@ -61,18 +64,26 @@ public class Main {
         // Is planet safe to land shuttle
         boolean isSafe = arwing.isSafeToLand(mars);
 
-        // Planet environment is safe so crew can physically land on surface
-        boolean hasLanded = arwing.landOnSurface(isSafe, mars.getPlanetName());
+        if (isSafe && mars.getHasSurface()) {
+            // Planet environment is safe so crew can physically land on surface
+            arwing.landOnSurface(mars.getHasSurface(), mars.getPlanetName());
+        }
+        else {
+            if (!isSafe && mars.getHasSurface()) {
+                System.out.print("The Rover is suitable for harsh environments, would you like to try to deploy the rover instead? Y/N : ");
+                String input = scn.next();
+                if (input.equals("Y") || input.equals("y")) {
+                    // Check if shuttle has a rover unit onboard and deploy if shuttle cannot land and planet has a surface
+                    arwing.deployRover(arwing.getHasRover(), mars.getHasSurface());
+                }
+                else if (input.equals("N") || input.equals("n")) {
+                    System.out.println("Rover initiation sequence aborted.");
+                }
+                else {
+                    System.out.println("Sorry that is not a valid input..");
+                }
+            }
+        }
 
-        // Check if shuttle has a rover unit onboard and deploy if shuttle cannot land and planet has a surface
-        arwing.deployRover(arwing.getHasRover(), mars.getHasSurface(), hasLanded);
-
-        /*
-                **** Fix semantics of the method calls ***
-
-                Figure a way to call deployRover() after orbitObject(),
-                doesn't make sense to call the method after crew landed on surface...
-                * Maybe forward declaration of deployRover or decouple the methods
-         */
     }
 }
