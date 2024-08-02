@@ -12,6 +12,7 @@ public class Main {
         Astronaut astronaut4 = new Astronaut();
         astronaut4 = astronaut4.createUserAstronaut();
 
+
         // Instantiate Shuttle object and display info
         Shuttle arwing = new Shuttle("Arwing","United States","Exploration",6,true,213000.0,100.0);
         System.out.println(arwing.toString());
